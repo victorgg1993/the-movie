@@ -1,0 +1,13 @@
+<ul *ngFor="let pelicula of peliculas">
+  <li [routerLink]="['/movie/', pelicula.id]" >
+    <div>
+      <h1>{{ pelicula.title }}</h1>
+      <h2>Room: {{ pelicula.room }}</h2>
+    </div>
+
+    <div>
+      <img src="{{ pelicula.poster }}" alt="" />
+      <h2>{{ pelicula.director }}</h2>
+    </div>
+  </li>
+</ul>

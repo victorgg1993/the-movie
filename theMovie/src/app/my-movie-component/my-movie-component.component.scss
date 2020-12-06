@@ -1,0 +1,78 @@
+@import "../estils.scss";
+
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-negre;
+
+  width: 100%;
+  height: 100%;
+
+  font-family: $familia-font;
+  color: $color-negre;
+
+  background-image: url("../img/fons.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  div {
+    display: flex;
+    flex-flow: row;
+    width: 90%;
+    height: auto;
+    background-color: rgb(230, 230, 230);
+    padding: 1em;
+
+    article {
+      display: flex;
+      flex-flow: column;
+      width: 75%;
+      padding-left: 1em;
+
+      section {
+        h1 {
+          font-weight: bold;
+        }
+        p {
+          padding-left: 5em;
+          width: 30em;
+        }
+      }
+
+      section:first-of-type {
+        p {
+          text-align: center;
+          font-size: 22px;
+        }
+      }
+
+      button {
+        width: 10em;
+        margin-top: 4em;
+        height: 3em;
+        font-weight: bold;
+        border-style: none;
+        background-color: rgb(190, 160, 164);
+        font-size: 17px;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: rgb(161, 131, 135);
+        color: white;
+        border-style: none;
+      }
+    }
+
+    aside {
+      display: flex;
+      flex-flow: column;
+      width: 25%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

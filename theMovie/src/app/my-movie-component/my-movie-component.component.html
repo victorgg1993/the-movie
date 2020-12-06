@@ -1,0 +1,49 @@
+<div>
+  <aside>
+    <img src="{{ peli_actual?.poster }}" alt="" />
+  </aside>
+
+  <article>
+    <section>
+      <h1>Room {{ peli_actual?.room }}</h1>
+      <p>{{ peli_actual?.title }}</p>
+    </section>
+
+    <section>
+      <h1>Genres</h1>
+      <ul>
+        <li *ngFor="let genere of peli_actual?.genres"><p>{{ genere }}</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Year</h1>
+      <p>{{ peli_actual?.year }}</p>
+    </section>
+
+    <section>
+      <h1>Director</h1>
+      <p>{{ peli_actual?.director }}</p>
+    </section>
+
+    <section>
+      <h1>Actors</h1>
+      <ul>
+        <li *ngFor="let actor of peli_actual?.actors"><p>{{ actor }}</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Schedule</h1>
+      <ul>
+        <li *ngFor="let horari of peli_actual?.schedule"><p>{{ horari }}</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Synopsis</h1>
+      <p>{{ peli_actual?.synopsis }}</p>
+    </section>
+    <button [routerLink]="'/home'">Volver</button>
+  </article>
+</div>
