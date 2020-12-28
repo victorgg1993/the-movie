@@ -17,18 +17,19 @@ export class MyMovieComponentComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private servicioPeli: MoviesService
+    private serveiPelis: MoviesService
   ) {}
 
   ngOnInit(): void {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.peli_actual = this.serveiPelis.getMovie(this.id);
 
-    this.suscripcion = this.servicioPeli
-      .getMovie$(this.id)
-      .subscribe((movie) => (this.peli_actual = movie));
+    // this.suscripcion = this.servicioPeli
+    //   .getMovie$(this.id)
+    //   .subscribe((movie) => (this.peli_actual = movie));
   }
 
   ngOnDestroy(): void {
-    this.suscripcion.unsubscribe();
+    // this.suscripcion.unsubscribe();
   }
 }

@@ -3,19 +3,26 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Movie from './interface/movie';
 import { HttpClient } from '@angular/common/http';
+import * as data from './db/movies.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
 
-  constructor(private http: HttpClient) {}
+  private pelis;
 
-  getMovies$(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(environment.URL);
+  constructor(/* private http: HttpClient */) {
+    this.pelis = JSON.parse(JSON.stringify(data.movies));
   }
 
-  getMovie$(_id: number): Observable<Movie> {
-    return this.http.get<Movie>(environment.URL + '/' + _id);
+  getMovies(){ //: Observable<Movie[]> {
+    //return this.http.get<Movie[]>(environment.URL);
+    return this.pelis;
+  }
+
+  getMovie(_id: number)/* : Observable<Movie>  */{
+    //return this.http.get<Movie>(environment.URL + '/' + _id);
+    return this.pelis.filter(k => k.id == _id)[0];
   }
 }

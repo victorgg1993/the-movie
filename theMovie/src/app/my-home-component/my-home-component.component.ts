@@ -10,16 +10,17 @@ import Movie from '../interface/movie';
 })
 export class MyHomeComponentComponent implements OnInit {
   suscripciones: Subscription[];
-  peliculas: Movie[];
+  // peliculas: Movie[];
+  peliculas = this.serveiPelis.getMovies();
 
   constructor(private serveiPelis: MoviesService) {
     this.suscripciones = [];
   }
 
   ngOnInit(): void {
-    this.serveiPelis.getMovies$().subscribe((dades) => {
-      this.peliculas = dades;
-      /* console.log(dades); */
-    });
+    // this.serveiPelis.getMovies().subscribe((dades) => {
+    //   this.peliculas = dades;
+    //   /* console.log(dades); */
+    // });
   }
 }
